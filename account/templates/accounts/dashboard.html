@@ -1,0 +1,51 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<div class="container" style="min-height: 80vh;">  <!-- Added min-height -->
+    <div class="row justify-content-center py-5">  <!-- Added py-5 here -->
+        <div class="col-lg-8 col-xl-6">  <!-- Adjusted column sizes -->
+            <div class="card shadow-lg" style="min-height: 410px;">  <!-- Added min-height and shadow-lg -->
+                <div class="card-header bg-dark text-white py-5">  <!-- Added py-3 -->
+                    <h3 class="mb-0 text-center">  <!-- Centered text -->
+                        <i class="fas fa-user-shield me-2"></i>Admin Dashboard
+                    </h3>
+                </div>
+                <div class="card-body d-flex flex-column">  <!-- Flex column layout -->
+                    <div class="mb-4 text-center">  <!-- Added margin and center -->
+                        <h4 class="fw-bold">Welcome, {{ request.user.username }}!</h4>
+                        <p class="lead">You have full access to manage your portfolio.</p>
+                    </div>
+                    
+                    <div class="mt-auto">  <!-- Pushes buttons to bottom -->
+                        <div class="d-grid gap-2 d-md-flex justify-content-center">  <!-- Better button grid -->
+                            <a href="{% url 'project_add' %}" class="btn btn-primary btn-lg px-4 me-md-2">
+                                <i class="fas fa-plus me-2"></i>Add Project
+                            </a>
+                            <a href="{% url 'projects_list' %}" class="btn btn-secondary btn-lg px-4 me-md-2">
+                                <i class="fas fa-list me-2"></i>View Projects
+                            </a>
+                            <a href="{% url 'account_logout' %}" class="btn btn-danger btn-lg px-4">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .card {
+            min-height: auto !important;  /* Remove fixed height on mobile */
+            margin-top: 2rem !important;
+        }
+        .btn-lg {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+{% endblock %}

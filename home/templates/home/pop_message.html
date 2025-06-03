@@ -1,0 +1,85 @@
+
+    <style>
+        /* Custom alert positioning and styling */
+        .custom-alert-container {
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 1100; /* Above navbar */
+            pointer-events: none;
+        }
+        
+        .custom-alert {
+            max-width: 600px;
+            width: 90%;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            pointer-events: auto;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .alert-success {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+        
+        .alert-warning {
+            background-color: #ffc107;
+            color: #212529;
+            border: none;
+        }
+        
+        .btn-close-white {
+            filter: invert(1);
+            opacity: 0.8;
+        }
+        
+        .btn-close-dark {
+            opacity: 0.8;
+        }
+        
+        .alert-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+
+    <!-- Messages will appear here -->
+    {% if messages %}
+    <div class="custom-alert-container">
+        {% for message in messages %}
+            <div class="custom-alert alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="auto-dismiss-alert">
+                <div class="d-flex align-items-center">
+                    {% if message.tags == 'success' %}
+                        <i class="fas fa-check-circle alert-icon"></i>
+                    {% elif message.tags == 'warning' %}
+                        <i class="fas fa-exclamation-triangle alert-icon"></i>
+                    {% endif %}
+                    <span>{{ message }}</span>
+                </div>
+                <button type="button" class="btn-close {% if message.tags == 'success' %}btn-close-white{% else %}btn-close-dark{% endif %}" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}

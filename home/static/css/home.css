@@ -1,0 +1,115 @@
+:root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #434343 0%, #000000 100%);
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+        }
+        
+        body {
+            background: var(--dark-bg);
+            color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .gradient-bg {
+            background: var(--secondary-gradient);
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            padding: 120px 0;
+            background: var(--primary-gradient);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin: 5px;
+            display: inline-block;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .card-custom {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-gradient);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            background: var(--darker-bg);
+            padding: 30px 0;
+        }
+
+        @media (max-width: 991.98px) {
+            .offcanvas {
+                width: 75% !important;  /* Adjust width as needed */
+            }
+            
+            /* Add your custom offcanvas width here */
+            #navbarOffcanvas {
+                width: 300px; /* Adjust this value as needed */
+                max-width: 30%; /* Ensures it doesn't get too wide on small screens */
+            }   
+        }
+
+
+
+

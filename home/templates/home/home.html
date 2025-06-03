@@ -1,0 +1,117 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Hi, I'm <span class="text-primary-emphasis">{{name}}</span></h1>
+                    <h2 class="mb-4">Backend  Developer</h2>
+                    <p class="lead mb-4">I build exceptional digital experiences with modern technologies.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary-custom btn-lg">Hire Me</a>
+                        <a href="{% static 'docs/my_cv.pdf' %}" target="_blank" class="btn btn-outline-light btn-lg">Download CV</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <img src="{% static "images/profile.jpeg" %}" alt="Profile" class="profile-img rounded-circle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "home/about_me.html" %}
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">My <span class="text-primary">Skills</span></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="mb-4">Technical Skills</h4>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Python/Django</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>ML | AI</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>HTML/CSS</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <h4 class="mb-4">Professional Skills</h4>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Communication</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Teamwork</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Project Management</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5">
+                <h4 class="text-center mb-4">Technologies I Work With</h4>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <span class="skill-badge"><i class="fab fa-python me-2"></i>Python</span>
+                    <span class="skill-badge"><i class="fab fa-laptop-code me-2"></i>Django</span>
+                    <span class="skill-badge"><i class="fab fa-airbnb me-2"></i>ML/AI</span>
+                    <span class="skill-badge"><i class="fas fa-database me-2"></i>MySQL</span>
+                    <span class="skill-badge"><i class="fab fa-docker me-2"></i>Docker</span>
+                    <span class="skill-badge"><i class="fab fa-git-alt me-2"></i>Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+
+    {% include "projects/home_projects.html" %}
+    
+    <!-- Contact Section -->
+     {% include "home/contact.html" %}
+
+{% endblock content %}

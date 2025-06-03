@@ -1,0 +1,47 @@
+{% comment %} {% extends "home/base.html" %} {% endcomment %}
+{% load static %}
+
+{% comment %} {% block content %} {% endcomment %}
+     <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">About <span class="text-primary">Me</span></h2>
+                    <p class="lead">I'm a passionate developer with 1+ years of experience in backend development and building intelligent web applications.</p>
+                    <p>I specialize in creating scalable backend systems using modern frameworks like Django and FastAPI, and I enjoy integrating machine learning models into real-world applications. From automating workflows to deploying smart APIs, I bring ML and AI into production.</p>
+                    <p>My core interests lie in solving complex problems using data-driven approaches, training custom models, and designing efficient architectures that power intelligent platforms. I'm always exploring the intersection of software engineering and artificial intelligence.</p>
+                    <div class="mt-4">
+
+                        {% comment %} <a href="{{static "images/profile.jpeg"}}" class="btn btn-primary-custom me-2"><i class="fas fa-file-download me-2"></i>Download CV</a> {% endcomment %}
+                        <a href="{% static 'docs/my_cv.pdf' %}" target="_blank" rel="noopener noreferrer" class="btn btn-primary-custom me-2">
+                            <i class="fas fa-file-pdf me-2"></i>View CV
+                        </a>
+
+
+                        <a href="#contact" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i>Contact Me</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="card card-custom p-4 h-100">
+                        <h3 class="mb-4">Personal Info</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><strong>Name:</strong> {{name}}</li>
+                            <li class="mb-3"><strong>Email:</strong> {{email}}</li>
+                            <li class="mb-3"><strong>Phone:</strong> {{phone}}</li>
+                            <li class="mb-3"><strong>Location:</strong> {{location}}</li>
+                            <li class="mb-3"><strong>Freelance:</strong> Available</li>
+                        </ul>
+                        <div class="social-links mt-auto">
+                            <a href="https://github.com/Biswaa000" target='next' class="social-icon me-3"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/bishalsharma001/" target='next' class="social-icon me-3"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://x.com/BishalShar4663" target='next' class="social-icon me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/bishalsharma000/" target="next" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% comment %} {% endblock content %} {% endcomment %}

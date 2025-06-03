@@ -1,0 +1,50 @@
+<!-- Contact Section -->
+<section id="contact" class="section bg-dark">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Get In <span class="text-primary">Touch</span></h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="post" action="{% url 'contact_view' %}">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control bg-transparent text-white" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control bg-transparent text-white" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="subject" class="form-control bg-transparent text-white" placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control bg-transparent text-white" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary-custom">Send Message</button>
+                </form>
+            </div>
+
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="card card-custom p-4 h-100">
+                    <h3 class="mb-4">Contact Info</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> Dharan, Nepal</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-2"></i> bishalsharma406365@gmail.com</li>
+                        <li class="mb-3"><i class="fas fa-phone me-2"></i> +9779817786631</li>
+                        <li class="mb-3"><i class="fas fa-globe me-2"></i> Null</li>
+                    </ul>
+                    <div class="social-links mt-4">
+                        <a href="https://github.com/Biswaa000" target="_blank" class="social-icon me-3"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/bishalsharma001/" target="_blank" class="social-icon me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/BishalShar4663" target="_blank" class="social-icon me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/bishalsharma000/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <h5>Working Hours</h5>
+                        <p class="mb-0">Monday - Friday: 9am - 5pm</p>
+                        <p class="mb-0">Weekend: Available for urgent requests</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

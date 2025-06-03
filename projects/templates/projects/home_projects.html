@@ -1,0 +1,127 @@
+
+
+{% comment %} {% block content %} {% endcomment %}
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">My <span class="text-primary">Projects</span></h2>
+
+    <div class="row g-4">
+      {% for project in projects %}
+      <div class="col-md-4">
+        <div class="card card-custom h-100">
+          {% comment %} <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="{{ project.title }}">   {% endcomment %}
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.short_description }}</p>
+            <div class="mb-3">
+              {% if project.live_url %}
+              <a href="{{ project.live_url }}" class="btn btn-sm btn-primary-custom me-2" target="_blank">Live Demo</a>
+              {% endif %}
+              {% if project.github_url %}
+              <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-light" target="_blank">Code</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center">No projects available at the moment.</p>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="{% url 'projects_list' %}" class="btn btn-outline-primary">📁 View All Projects</a>
+    </div>
+  </div>
+</section>
+{% comment %} {% endblock content %} {% endcomment %}
+
+
+
+
+
+
+{% comment %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends "home/base.html" %}
+ 
+{% block content %}
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">My <span class="text-primary">Projects</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-custom">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Platform</h5>
+                            <p class="card-text">A full-featured e-commerce platform built with Django and React.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Django</span>
+                                <span class="badge bg-primary me-1">React</span>
+                                <span class="badge bg-primary">PostgreSQL</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-primary-custom me-2">Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline-light">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Task Management App</h5>
+                            <p class="card-text">A collaborative task management application with real-time updates.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Node.js</span>
+                                <span class="badge bg-primary me-1">MongoDB</span>
+                                <span class="badge bg-primary">Socket.io</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-primary-custom me-2">Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline-light">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Portfolio Website</h5>
+                            <p class="card-text">A responsive portfolio website built with modern web technologies.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">HTML5</span>
+                                <span class="badge bg-primary me-1">CSS3</span>
+                                <span class="badge bg-primary">JavaScript</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-primary-custom me-2">Live Demo</a>
+                            <a href="#" class="btn btn-sm btn-outline-light">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{% url 'projects_list' %}" class="btn btn-primary-custom">View All Projects</a>
+            </div>
+        </div>
+    </section>
+{% endblock content %} {% endcomment %}
