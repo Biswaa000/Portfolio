@@ -1,4 +1,7 @@
-django 
+
+Django>=5.2
 Pillow
 django-axes
 python-decouple
+whitenoise
+gunicorn
