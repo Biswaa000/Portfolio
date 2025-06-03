@@ -4,10 +4,12 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.core.validators import MinLengthValidator
 from django.utils.crypto import get_random_string
+from django.contrib.auth.models import User
 
 
 class Project(models.Model):
     """Model for portfolio projects"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(
         max_length=100,
         validators=[MinLengthValidator(3)],
